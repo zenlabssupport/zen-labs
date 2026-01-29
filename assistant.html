@@ -44,33 +44,30 @@
     <h2>Build Your Assistant</h2>
     <p>Tell us what kind of AI you want</p>
 
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Describe your AI idea..." required></textarea>
-      <button type="submit">Send Request</button>
-    </form>
-  </div>
+  <form id="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Requirement" required></textarea>
+  <button type="submit">Send Request</button>
+</form>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("sb7RpA1Yj04NqdLoD");
-    })();
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("sb7RpA1Yj04NqdLoD");  // yahan apni PUBLIC key
+  })();
 
-    document.getElementById("contact-form").addEventListener("submit", function(e){
-      e.preventDefault();
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
 
-      emailjs.sendForm(
-        "service_rmfej9j",
-        "template_shachko"
-        "contact_us",
-        this
-      ).then(function(){
-        alert("Request sent successfully!");
-      }, function(error){
-        alert("Failed: " + error.text);
-      });
+    emailjs.sendForm(
+      "service_rmfej9j",          // Service ID
+      "template_shachko",        // jo nayi template ID mili hai
+      this
+    ).then(function(){
+      alert("Request sent successfully!");
+    }, function(error){
+      alert("Failed: " + error.text);
     });
-  </script>
-</body>
+  });
+</script>
