@@ -40,3 +40,55 @@ button:hover {
   height: 300px;
   margin-top: 40px;
 }
+/* Loading Screen */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #001a25, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 42px;
+  font-weight: bold;
+  color: #00f7ff;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #00f7ff;
+  animation: pulse 1.5s infinite;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.loader-bar::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #00f7ff;
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
