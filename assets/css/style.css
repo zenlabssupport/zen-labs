@@ -34,3 +34,9 @@ button:hover {
   transform: scale(1.06);
   box-shadow: 0 0 25px #00f7ff;
 }
+
+#three-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+}
