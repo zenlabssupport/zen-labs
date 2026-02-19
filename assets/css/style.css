@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #050b12;
+  color: white;
+}
+
+/* Cinematic animation */
+.home-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.home-anim.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00f7ff; }
+  to   { text-shadow: 0 0 35px #00f7ff; }
+}
+
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px #00f7ff;
+}
